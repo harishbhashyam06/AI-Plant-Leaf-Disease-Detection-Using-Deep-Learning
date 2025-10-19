@@ -1,0 +1,16 @@
+﻿venv/
+.venv/
+.env/
+__pycache__/
+*.pyc
+*.log
+
+# Large model artifacts
+*.h5
+*.keras
+*.ckpt
+*.tflite
+*.onnx
+*.pb
+*.tfrecord
+app/trained_model/*
