@@ -55,7 +55,7 @@ Multi_Crop_Dataset/
 The best-performing model (**DenseNet121**) was selected for deployment.
 Download the trained model from Google Drive below:
 
-🔗 **[Trained Model - Google Drive Link](https://drive.google.com/file/d/1rKh-IElSdHTqax7XdfSdZTn-r8T_qWPf/view?usp=drive_link)**
+🔗 **[Trained Model - Google Drive Link](https://drive.google.com/file/d/13uQJa-Bq1sEv2ai_XdrmvrJgWWba7v-7/view)**
 
 Once downloaded, place it inside:
 
@@ -299,3 +299,4 @@ Confidence: 97.45%
 pip install -r app/requirements.txt
 python -m streamlit run app/main.py
 ```
+
