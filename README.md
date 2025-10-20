@@ -202,7 +202,7 @@ if uploaded_image is not None:
         if st.button('Classify'):
             predicted_class, confidence = predict_image_class(model, uploaded_image, class_indices)
             st.success(f"**Prediction:** {predicted_class}")
-            st.info(f"**Confidence:** {confidence:.2f}%")
+
 ```
 
 ---
@@ -308,6 +308,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 pip install -r app/requirements.txt
 python -m streamlit run app/main.py
 ```
+
 
 
 
