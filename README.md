@@ -250,16 +250,11 @@ test_images/
 
 **Example Output:**
 
-```
-Prediction: Tomato Leaf Curl Virus
+Prediction: Tomato Leaf Curl Virus  
 Confidence: 97.45%
 
-```
-```
 ![App Output](https://github.com/harishbhashyam06/AI-Plant-Leaf-Disease-Detection-Using-Deep-Learning/blob/main/test_images/output.png)
-```
 
----
 
 ## 🧩 9. Workflow Summary
 
@@ -315,6 +310,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 pip install -r app/requirements.txt
 python -m streamlit run app/main.py
 ```
+
 
 
 
