@@ -219,7 +219,7 @@ if uploaded_image is not None:
 
 ---
 
----
+
 
 ## 🚀 7. Run the Application
 
@@ -362,6 +362,8 @@ docker run -p 8501:8501 plant-disease-app
 
 Access the app locally at 👉 **[http://localhost:8501](http://localhost:8501)**
 
+```
+
 ✅ **Run Summary**
 
 ```bash
@@ -371,3 +373,4 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 pip install -r app/requirements.txt
 python -m streamlit run app/main.py
 ```
+
