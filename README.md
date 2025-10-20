@@ -260,7 +260,7 @@ Confidence: 97.45%
 1. **Load dataset** using TensorFlow’s `image_dataset_from_directory`.
 2. **Train models** — Custom CNN, VGG16, MobileNetV2, DenseNet121.
 3. **Evaluate models** — Track validation accuracy and loss.
-4. **Save the best model** (DenseNet121).
+4. **Save the best model** (Custom CNN).
 5. **Deploy via Streamlit** for real-time inference.
 
 ---
@@ -308,6 +308,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 pip install -r app/requirements.txt
 python -m streamlit run app/main.py
 ```
+
 
 
 
