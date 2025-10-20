@@ -297,17 +297,16 @@ Confidence: 97.45%
 
 Research Papers
 
-Mohanty et al. (2016) – Introduced deep CNNs (AlexNet, GoogLeNet) for plant disease detection using the PlantVillage dataset; achieved ~99% accuracy, proving CNNs’ power in agriculture.
+* Mohanty et al. (2016) – Introduced deep CNNs (AlexNet, GoogLeNet) for plant disease detection using the PlantVillage dataset; achieved ~99% accuracy, proving CNNs’ power in agriculture.
 
-Singh et al. (2019) – Released PlantDoc, a real-world dataset with diverse backgrounds, showing that lab-trained models need domain adaptation for real field conditions.
-
+* Singh et al. (2019) – Released PlantDoc, a real-world dataset with diverse backgrounds, showing that lab-trained models need domain adaptation for real field conditions.
 Framework Docs
 
-TensorFlow – Core ML framework for training and deploying models.
+* TensorFlow – Core ML framework for training and deploying models.
 
-Keras – High-level API for fast deep learning model development.
+* Keras – High-level API for fast deep learning model development.
 
-Streamlit – Framework for deploying interactive ML web apps easily.
+* Streamlit – Framework for deploying interactive ML web apps easily.
 
 ---
 
@@ -320,6 +319,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 pip install -r app/requirements.txt
 python -m streamlit run app/main.py
 ```
+
 
 
 
