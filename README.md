@@ -237,19 +237,7 @@ test_images/
 └── test_potato_early_blight.jpg
 ```
 
-### Example Output:
 
-```
-🌿 Plant Leaf Disease Classifier
---------------------------------
-Prediction: Tomato Leaf Curl Virus
-
-
-
-![App Output](https://github.com/harishbhashyam06/AI-Plant-Leaf-Disease-Detection-Using-Deep-Learning/blob/main/test_images/output.png)
-
-
-```
 ### Example Output
 
 🌿 Plant Leaf Disease Classifier  
@@ -312,6 +300,7 @@ Confidence: 97.45%
 pip install -r app/requirements.txt
 python -m streamlit run app/main.py
 ```
+
 
 
 
