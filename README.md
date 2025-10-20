@@ -299,13 +299,16 @@ Confidence: 97.45%
 
 ---
 
-✅ **Run this project in 3 steps:**
+✅ **Run this project in 5 steps:**
 
 ```bash
+python -m venv venv
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\venv\Scripts\activate
 pip install -r app/requirements.txt
 python -m streamlit run app/main.py
 ```
+
 
 
 
