@@ -244,6 +244,13 @@ test_images/
 --------------------------------
 Prediction: Tomato Leaf Curl Virus
 Confidence: 97.45%
+### 🧪 Example Output
+
+![App Output](test_images/output.png)
+
+**Prediction:** Tomato___Tomato_Yellow_Leaf_Curl_Virus  
+**Confidence:** 97.45%
+
 ```
 
 ---
@@ -299,5 +306,6 @@ Confidence: 97.45%
 pip install -r app/requirements.txt
 python -m streamlit run app/main.py
 ```
+
 
 
