@@ -243,7 +243,7 @@ test_images/
 🌿 Plant Leaf Disease Classifier
 --------------------------------
 Prediction: Tomato Leaf Curl Virus
-Confidence: 97.45%
+
 
 
 ![App Output](https://github.com/harishbhashyam06/AI-Plant-Leaf-Disease-Detection-Using-Deep-Learning/blob/main/test_images/output.png)
@@ -312,6 +312,7 @@ Confidence: 97.45%
 pip install -r app/requirements.txt
 python -m streamlit run app/main.py
 ```
+
 
 
 
