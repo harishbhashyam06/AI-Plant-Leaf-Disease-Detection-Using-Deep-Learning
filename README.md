@@ -27,7 +27,7 @@ A simple and interactive **Streamlit web app** allows users to upload leaf image
 ### 📂 Dataset Source
 
 The dataset used for training and validation is the **PlantVillage Dataset** from Kaggle:
-🔗 **[PlantVillage Dataset - Kaggle](https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset)**
+🔗 **[PlantVillage Dataset - Kaggle](https://www.kaggle.com/datasets/naimur006/plant-leaves-disease-detection/data)**
 
 ### 📁 Dataset Structure
 
@@ -282,7 +282,7 @@ Confidence: 97.45%
 
 ## 📚 12. References
 
-* **Dataset:** [PlantVillage (Kaggle)](https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset)
+* **Dataset:** [PlantVillage (Kaggle)](https://www.kaggle.com/datasets/naimur006/plant-leaves-disease-detection/data)
 * **Pretrained Model:** [Google Drive Model Link](https://drive.google.com/file/d/13uQJa-Bq1sEv2ai_XdrmvrJgWWba7v-7/view?usp=sharing)
 * **Research Papers:**
 
@@ -299,4 +299,5 @@ Confidence: 97.45%
 pip install -r app/requirements.txt
 python -m streamlit run app/main.py
 ```
+
 
