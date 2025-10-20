@@ -156,64 +156,65 @@ plant-leaf-disease-dl/
 
 ```python
 import os
-import io
 import json
 from PIL import Image
+
 import numpy as np
 import tensorflow as tf
 import streamlit as st
 
-WORKDIR = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH = os.path.join(WORKDIR, 'trained_model', 'plant_disease_prediction_model.h5')
-CLASS_INDICES_PATH = os.path.join(WORKDIR, 'class_indices.json')
 
-@st.cache_resource
-def load_model():
-    return tf.keras.models.load_model(MODEL_PATH)
+working_dir = os.path.dirname(os.path.abspath(__file__))
+model_path = f"{working_dir}/trained_model/plant_disease_prediction_model.h5"
+# Load the pre-trained model
+model = tf.keras.models.load_model(model_path)
 
-@st.cache_resource
-def load_class_indices():
-    with open(CLASS_INDICES_PATH, 'r') as f:
-        return json.load(f)
+# loading the class names
+class_indices = json.load(open(f"{working_dir}/class_indices.json"))
 
-model = load_model()
-class_indices = load_class_indices()
 
-def preprocess_image_bytes(image_bytes, target_size=(224, 224)):
-    img = Image.open(io.BytesIO(image_bytes)).convert('RGB')
+# Function to Load and Preprocess the Image using Pillow
+def load_and_preprocess_image(image_path, target_size=(224, 224)):
+    # Load the image
+    img = Image.open(image_path)
+    # Resize the image
     img = img.resize(target_size)
-    arr = np.array(img).astype('float32') / 255.0
-    arr = np.expand_dims(arr, axis=0)
-    return arr
+    # Convert the image to a numpy array
+    img_array = np.array(img)
+    # Add batch dimension
+    img_array = np.expand_dims(img_array, axis=0)
+    # Scale the image values to [0, 1]
+    img_array = img_array.astype('float32') / 255.
+    return img_array
 
-def predict(image_bytes):
-    x = preprocess_image_bytes(image_bytes)
-    preds = model.predict(x)
-    idx = int(np.argmax(preds, axis=1)[0])
-    prob = float(np.max(preds))
-    label = class_indices.get(str(idx), f'class_{idx}')
-    return label, prob, preds.flatten()
 
-st.set_page_config(page_title='Plant Leaf Disease Classifier', page_icon='🌿')
-st.title('🌿 Plant Leaf Disease Classifier')
-st.write('Upload a leaf image to detect the disease using a trained deep learning model.')
+# Function to Predict the Class of an Image
+def predict_image_class(model, image_path, class_indices):
+    preprocessed_img = load_and_preprocess_image(image_path)
+    predictions = model.predict(preprocessed_img)
+    predicted_class_index = np.argmax(predictions, axis=1)[0]
+    predicted_class_name = class_indices[str(predicted_class_index)]
+    return predicted_class_name
 
-uploaded = st.file_uploader('Upload an image...', type=['jpg', 'jpeg', 'png'])
 
-if uploaded is not None:
-    img = Image.open(uploaded).convert('RGB')
-    st.image(img, caption='Uploaded Image', use_container_width=True)
+# Streamlit App
+st.title('Plant Disease Classifier')
 
-    if st.button('Classify'):
-        label, prob, raw = predict(uploaded.getvalue())
-        st.success(f'**Prediction:** {label}\n\n**Confidence:** {prob*100:.2f}%')
+uploaded_image = st.file_uploader("Upload an image...", type=["jpg", "jpeg", "png"])
 
-        if st.checkbox('Show top-5 classes'):
-            top5_idx = np.argsort(raw)[-5:][::-1]
-            st.write({f'{class_indices.get(str(i), i)}': f'{raw[i]*100:.2f}%' for i in top5_idx})
+if uploaded_image is not None:
+    image = Image.open(uploaded_image)
+    col1, col2 = st.columns(2)
 
-        if prob < 0.6:
-            st.info('Low confidence: try a clearer, single-leaf photo in good lighting.')
+    with col1:
+        resized_img = image.resize((150, 150))
+        st.image(resized_img)
+
+    with col2:
+        if st.button('Classify'):
+            # Preprocess the uploaded image and predict the class
+            prediction = predict_image_class(model, uploaded_image, class_indices)
+            st.success(f'Prediction: {str(prediction)}')
 ```
 
 ---
@@ -311,4 +312,5 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 pip install -r app/requirements.txt
 python -m streamlit run app/main.py
 ```
+
 
