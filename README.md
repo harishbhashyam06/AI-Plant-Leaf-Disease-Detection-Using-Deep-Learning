@@ -108,6 +108,12 @@ h5py>=3.10
 python -m pip show tensorflow
 python -m pip show streamlit
 ```
+If not 
+
+```bash
+pip install tensorflow
+pip install streamlit
+```
 
 If both display version info, setup is successful ✅
 
@@ -300,6 +306,7 @@ Confidence: 97.45%
 pip install -r app/requirements.txt
 python -m streamlit run app/main.py
 ```
+
 
 
 
