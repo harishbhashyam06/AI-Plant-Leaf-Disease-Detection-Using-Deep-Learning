@@ -253,7 +253,7 @@ test_images/
 **Example Output:**
 
 
-Prediction: Tomato Leaf Curl Virus
+Prediction: Tomato__Tomato_Yellow_Leaf_Curl_Virus
 ![App Output](https://github.com/harishbhashyam06/AI-Plant-Leaf-Disease-Detection-Using-Deep-Learning/blob/main/test_images/output.png)
 
 
@@ -374,6 +374,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 pip install -r app/requirements.txt
 python -m streamlit run app/main.py
 ```
+
 
 
 
